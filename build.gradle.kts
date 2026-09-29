@@ -76,3 +76,12 @@ tasks.test {
     // (com.intellij.ui.icons.isIconActivated). Running headless locally too keeps local results faithful to CI.
     systemProperty("java.awt.headless", "true")
 }
+
+// Ship the license text inside the distributed jar, so it travels with any copy of the plugin.
+tasks.jar {
+    metaInf {
+        from(rootDir) {
+            include("LICENSE.txt")
+        }
+    }
+}
