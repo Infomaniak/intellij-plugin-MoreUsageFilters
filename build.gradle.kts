@@ -85,3 +85,21 @@ tasks.jar {
         }
     }
 }
+
+// Toolbar icon generator, kept out of the plugin: it has its own source set and is only run on demand.
+val iconGenerator: SourceSet by sourceSets.creating {
+    kotlin.srcDir("tools/icon-generator/src")
+}
+
+dependencies {
+    "iconGeneratorImplementation"(kotlin("stdlib"))
+}
+
+tasks.register<JavaExec>("generateIcon") {
+    group = "tools"
+    description = "Generates a toolbar icon from a string: ./gradlew -q generateIcon --args='@P path/without/extension'"
+    classpath = iconGenerator.runtimeClasspath
+    mainClass = "GenerateIconKt"
+    workingDir = rootDir
+    systemProperty("java.awt.headless", "true")
+}

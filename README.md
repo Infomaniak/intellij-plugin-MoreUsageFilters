@@ -64,11 +64,10 @@ Install it in Android Studio via **Settings | Plugins | ⚙ | Install Plugin fro
 
 ### Toolbar icons
 
-The toolbar icons are generated from a string of at most 2 characters, set in JetBrains Mono like the `@P` one. Only a
-JDK is needed:
+The toolbar icons are generated from a string of at most 2 characters, set in JetBrains Mono like the `@P` one:
 
 ```bash
-java tools/icon-generator/GenerateIcon.java "@P" src/main/resources/icons/showPreviewUsages
+./gradlew -q generateIcon --args='@P src/main/resources/icons/showPreviewUsages'
 # -> writes showPreviewUsages.svg and showPreviewUsages_dark.svg
 ```
 
