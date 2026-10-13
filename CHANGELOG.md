@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+### Added
+
+- `Show Test Usages` toggle. When it is off, every usage located in test sources (`test` and `androidTest` source
+  sets) is hidden. Its toolbar icon is `@T`, echoing `@Test`.
+
 ### Removed
 
 - `Show Comment Usages` toggle, Android Studio now ships its own filter for usages located in comments.

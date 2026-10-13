@@ -11,6 +11,8 @@
         <b>Show Preview Usages</b>: turn it off to hide every usage located inside a Jetpack Compose preview,
         that is a declaration annotated with <code>@Preview</code>, <code>@PreviewScreenSizes</code> or any custom
         multipreview annotation. Handy on a Composable that is, of course, always used by its own preview.<br/><br/>
+        <b>Show Test Usages</b>: turn it off to hide every usage located in test sources, such as the
+        <code>test</code> and <code>androidTest</code> source sets.<br/><br/>
         Supports both the K1 and the K2 Kotlin modes, and needs no configuration.
     ]]></description>
 
@@ -36,6 +38,11 @@
         <action id="MoreUsageFilters.ShowPreviewUsages"
                 class="com.intellij.openapi.actionSystem.EmptyAction"
                 icon="/icons/showPreviewUsages.svg">
+            <add-to-group group-id="UsageFilteringActionGroup" anchor="last"/>
+        </action>
+        <action id="MoreUsageFilters.ShowTestUsages"
+                class="com.intellij.openapi.actionSystem.EmptyAction"
+                icon="/icons/showTestUsages.svg">
             <add-to-group group-id="UsageFilteringActionGroup" anchor="last"/>
         </action>
     </actions>
