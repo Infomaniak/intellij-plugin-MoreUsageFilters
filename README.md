@@ -61,6 +61,16 @@ The distribution to share with a zip file is produced by:
 
 Install it in Android Studio via **Settings | Plugins | ⚙ | Install Plugin from Disk...**.
 
+### Toolbar icons
+
+The toolbar icons are generated from a string of at most 2 characters, set in JetBrains Mono like the `@P` one. Only a
+JDK is needed:
+
+```bash
+java tools/icon-generator/GenerateIcon.java "@P" src/main/resources/icons/showPreviewUsages
+# -> writes showPreviewUsages.svg and showPreviewUsages_dark.svg
+```
+
 ## Releasing
 
 `CHANGELOG.md` is the single source of truth for the release notes. The section matching `pluginVersion` is rendered to
