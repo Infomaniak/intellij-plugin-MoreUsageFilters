@@ -6,19 +6,17 @@ built-in *Show Import Statements* and *Show Generated Code* ones:
 | Toggle                   | When it is off, it hides                                                     |
 |--------------------------|------------------------------------------------------------------------------|
 | **Show Preview Usages**  | every usage located inside a declaration annotated with a preview annotation |
-| **Show Comment Usages**  | every usage located inside a comment, KDoc and JavaDoc first and foremost    |
 
-Together they make `Cmd+B` / `Ctrl+B` (and Find Usages) actually useful on a Composable that is, of course, always used
-by its own `@Preview` and mentioned in the KDoc of half the file.
+Handy on `Cmd+B` / `Ctrl+B` (and Find Usages) on a Composable that is, of course, always used by its own `@Preview`.
 
 Available on the [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/34308-more-usage-filters)
 
 ## In action
 
-`SuperCoolComponent` has five usages: two real ones in `MyFavoriteScreen`, two that only exist to feed its `@Preview`
-functions, and one `[SuperCoolComponent]` link in its own KDoc. Turning both toggles off leaves the two that matter.
+`SuperCoolComponent` has two real usages in `MyFavoriteScreen`, and others that only exist to feed its `@Preview`
+functions. Turning the toggle off leaves the two that matter.
 
-| Both toggles on                                             | Both toggles off                                                 |
+| Toggle on                                                   | Toggle off                                                       |
 |-------------------------------------------------------------|------------------------------------------------------------------|
 | ![The five usages are listed](images/all-usage-visible.png) | ![Only the two real usages are left](images/filtered-usages.png) |
 
@@ -35,11 +33,6 @@ annotation whose short name contains `preview`, case-insensitively:
 
 The matching is deliberately name based (no resolution, no index access), so it stays fast and works no matter which
 preview library is used.
-
-## What is considered a comment
-
-Anything the PSI calls a comment. In practice that means the `[Link]` references of a KDoc, since they are the only
-ones `Cmd+B` reports, the other comments only showing up when Find Usages is asked to search in comments and strings.
 
 ## Where the toggles show up
 
@@ -89,10 +82,9 @@ Android Studio 2025.1 (Narwhal) and later. The Kotlin plugin is required and is 
 | `MoreUsageFiltersRuleProvider.kt` | Declares every rule, and the base class that reads the PSI behind a usage.         |
 | `PreviewAnnotationMatcher.kt`     | Decides whether an annotation short name marks a preview. Pure logic, unit tested. |
 | `PreviewUsageDetector.kt`         | Walks the PSI parents of a usage looking for an annotated declaration.             |
-| `CommentUsageDetector.kt`         | Walks the PSI parents of a usage looking for a comment.                            |
 | `*UsageFilteringRule.kt`          | One `UsageFilteringRule` per toggle.                                               |
 | `META-INF/plugin.xml`             | Registers the extension and the `EmptyAction`s used as the toggle presentations.   |
-| `icons/show*Usages*.svg`          | The toolbar icons: `@P` and `/*` traced from JetBrains Mono.                       |
+| `icons/show*Usages*.svg`          | The toolbar icons, `@P` traced from JetBrains Mono.                                |
 | `META-INF/pluginIcon.svg`         | The plugin icon: a filter funnel with a `+` badge.                                 |
 
 ## Feedback

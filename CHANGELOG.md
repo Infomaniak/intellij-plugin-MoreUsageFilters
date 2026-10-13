@@ -1,5 +1,11 @@
 # More Usage Filters Changelog
 
+## [Unreleased]
+
+### Removed
+
+- `Show Comment Usages` toggle, Android Studio now ships its own filter for usages located in comments.
+
 ## [1.0.0]
 
 ### Added

@@ -5,14 +5,12 @@
     <vendor url="https://www.infomaniak.com">Infomaniak</vendor>
 
     <description><![CDATA[
-        Two extra filter toggles for the Find Usages tool window and the Show Usages popup
+        Extra filter toggles for the Find Usages tool window and the Show Usages popup
         (<code>Cmd+B</code> / <code>Ctrl+B</code>), next to the built-in <i>Show Import Statements</i> and
         <i>Show Generated Code</i> ones.<br/><br/>
         <b>Show Preview Usages</b>: turn it off to hide every usage located inside a Jetpack Compose preview,
         that is a declaration annotated with <code>@Preview</code>, <code>@PreviewScreenSizes</code> or any custom
         multipreview annotation. Handy on a Composable that is, of course, always used by its own preview.<br/><br/>
-        <b>Show Comment Usages</b>: turn it off to hide every usage located inside a comment, the
-        <code>[Link]</code> references of a KDoc first and foremost.<br/><br/>
         Supports both the K1 and the K2 Kotlin modes, and needs no configuration.
     ]]></description>
 
@@ -38,11 +36,6 @@
         <action id="MoreUsageFilters.ShowPreviewUsages"
                 class="com.intellij.openapi.actionSystem.EmptyAction"
                 icon="/icons/showPreviewUsages.svg">
-            <add-to-group group-id="UsageFilteringActionGroup" anchor="last"/>
-        </action>
-        <action id="MoreUsageFilters.ShowCommentUsages"
-                class="com.intellij.openapi.actionSystem.EmptyAction"
-                icon="/icons/showCommentUsages.svg">
             <add-to-group group-id="UsageFilteringActionGroup" anchor="last"/>
         </action>
     </actions>

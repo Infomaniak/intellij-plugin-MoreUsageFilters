@@ -60,13 +60,12 @@ class MoreUsageFiltersRegistrationTest : BasePlatformTestCase() {
     }
 
     private companion object {
-        val ALL_RULES = listOf(PreviewUsageFilteringRule, CommentUsageFilteringRule)
+        val ALL_RULES = listOf(PreviewUsageFilteringRule)
 
         val EXPECTED_ACTION_TEXTS = mapOf(
             ActionIds.SHOW_PREVIEW_USAGES to "Show Preview Usages",
-            ActionIds.SHOW_COMMENT_USAGES to "Show Comment Usages",
         )
 
-        val ICONS = listOf("showPreviewUsages", "showCommentUsages")
+        val ICONS = listOf("showPreviewUsages")
     }
 }

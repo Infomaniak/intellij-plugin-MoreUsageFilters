@@ -15,7 +15,6 @@ import com.intellij.usages.rules.UsageFilteringRuleProvider
  */
 object ActionIds {
     const val SHOW_PREVIEW_USAGES: String = "MoreUsageFilters.ShowPreviewUsages"
-    const val SHOW_COMMENT_USAGES: String = "MoreUsageFilters.ShowCommentUsages"
 }
 
 /**
@@ -26,7 +25,6 @@ class MoreUsageFiltersRuleProvider : UsageFilteringRuleProvider {
 
     override fun getApplicableRules(project: Project): Collection<UsageFilteringRule> = listOf(
         PreviewUsageFilteringRule,
-        CommentUsageFilteringRule,
     )
 }
 
