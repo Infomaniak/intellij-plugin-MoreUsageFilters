@@ -6,6 +6,8 @@
 
 - `Show Test Usages` toggle. When it is off, every usage located in test sources (`test` and `androidTest` source
   sets) is hidden. Its toolbar icon is `@T`, echoing `@Test`.
+- `Show Markdown Usages` toggle. When it is off, every usage located in a Markdown file, such as a README, is hidden,
+  code fences included. Its toolbar icon is `M↓`, the Markdown mark.
 
 ### Removed
 

@@ -16,6 +16,7 @@ import com.intellij.usages.rules.UsageFilteringRuleProvider
 object ActionIds {
     const val SHOW_PREVIEW_USAGES: String = "MoreUsageFilters.ShowPreviewUsages"
     const val SHOW_TEST_USAGES: String = "MoreUsageFilters.ShowTestUsages"
+    const val SHOW_MARKDOWN_USAGES: String = "MoreUsageFilters.ShowMarkdownUsages"
 }
 
 /**
@@ -27,6 +28,7 @@ class MoreUsageFiltersRuleProvider : UsageFilteringRuleProvider {
     override fun getApplicableRules(project: Project): Collection<UsageFilteringRule> = listOf(
         PreviewUsageFilteringRule,
         TestUsageFilteringRule,
+        MarkdownUsageFilteringRule,
     )
 }
 

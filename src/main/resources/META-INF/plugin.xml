@@ -13,6 +13,8 @@
         multipreview annotation. Handy on a Composable that is, of course, always used by its own preview.<br/><br/>
         <b>Show Test Usages</b>: turn it off to hide every usage located in test sources, such as the
         <code>test</code> and <code>androidTest</code> source sets.<br/><br/>
+        <b>Show Markdown Usages</b>: turn it off to hide every usage located in a Markdown file, such as a README,
+        code fences included.<br/><br/>
         Supports both the K1 and the K2 Kotlin modes, and needs no configuration.
     ]]></description>
 
@@ -43,6 +45,11 @@
         <action id="MoreUsageFilters.ShowTestUsages"
                 class="com.intellij.openapi.actionSystem.EmptyAction"
                 icon="/icons/showTestUsages.svg">
+            <add-to-group group-id="UsageFilteringActionGroup" anchor="last"/>
+        </action>
+        <action id="MoreUsageFilters.ShowMarkdownUsages"
+                class="com.intellij.openapi.actionSystem.EmptyAction"
+                icon="/icons/showMarkdownUsages.svg">
             <add-to-group group-id="UsageFilteringActionGroup" anchor="last"/>
         </action>
     </actions>

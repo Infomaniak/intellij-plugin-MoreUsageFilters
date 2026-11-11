@@ -54,6 +54,18 @@ class UsageFilteringRuleTest : BasePlatformTestCase() {
         assertTrue(TestUsageFilteringRule.isVisible(usage, UsageTarget.EMPTY_ARRAY))
     }
 
+    fun `test the markdown rule hides a usage located in a Markdown file`() {
+        val usage = usageAtCaret(text = "Use `MyBut<caret>ton` everywhere.", path = "README.md")
+
+        assertFalse(MarkdownUsageFilteringRule.isVisible(usage, UsageTarget.EMPTY_ARRAY))
+    }
+
+    fun `test the markdown rule keeps a usage located in code`() {
+        val usage = usageAtCaret(text = USAGE_IN_CODE)
+
+        assertTrue(MarkdownUsageFilteringRule.isVisible(usage, UsageTarget.EMPTY_ARRAY))
+    }
+
     private fun usageAtCaret(text: String, path: String = "Sample.kt"): UsageInfo2UsageAdapter {
         val file = myFixture.addFileToProject(path, text)
         myFixture.configureFromExistingVirtualFile(file.virtualFile)

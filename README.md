@@ -7,6 +7,7 @@ built-in *Show Import Statements* and *Show Generated Code* ones:
 |--------------------------|------------------------------------------------------------------------------|
 | **Show Preview Usages**  | every usage located inside a declaration annotated with a preview annotation |
 | **Show Test Usages**     | every usage located in test sources, `test` and `androidTest` source sets    |
+| **Show Markdown Usages** | every usage located in a Markdown file, code fences included                 |
 
 Handy on `Cmd+B` / `Ctrl+B` (and Find Usages) on a Composable that is, of course, always used by its own `@Preview`.
 
@@ -94,7 +95,7 @@ Android Studio 2025.1 (Narwhal) and later. The Kotlin plugin is required and is 
 | `PreviewUsageDetector.kt`         | Walks the PSI parents of a usage looking for an annotated declaration.             |
 | `*UsageFilteringRule.kt`          | One `UsageFilteringRule` per toggle.                                               |
 | `META-INF/plugin.xml`             | Registers the extension and the `EmptyAction`s used as the toggle presentations.   |
-| `icons/show*Usages*.svg`          | The toolbar icons: `@P` and `@T` traced from JetBrains Mono.                       |
+| `icons/show*Usages*.svg`          | The toolbar icons: `@P`, `@T` and `M↓` traced from JetBrains Mono.                 |
 | `META-INF/pluginIcon.svg`         | The plugin icon: a filter funnel with a `+` badge.                                 |
 
 ## Feedback
